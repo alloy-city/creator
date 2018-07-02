@@ -20,8 +20,8 @@ import moveResourceDownOnClass from './move-resource-down-on-lesson'
 import getLesson from './get-lesson'
 
 let lesson = {
-    resources: [],
-    resourceObject: {},
+    resources: [], // ids
+    resourceObject: {}, // each member is a complete resource object
     classObject: {},
     selected: ''
 }

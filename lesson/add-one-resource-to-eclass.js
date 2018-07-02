@@ -2,7 +2,7 @@ export default (id) => {
     if (Creator.Lesson.lesson.selected == '') console.error('No Eclass selected.');
     else if (Creator.Lesson.lesson.resources.indexOf(id) == -1) {
         Creator.Lesson.lesson.resources.push(id);
-        Creator.Lesson.lesson.resourceObject[id] = Creator.Lesson.lesson.resources[id];
+        Creator.Lesson.lesson.resourceObject[id] = Creator.Resource.resources.resources[id];
         Creator.Lesson.modifyClass();
         $('#didactician-eclass-empty').remove();
         // var resourceFormatedToEclass = markUpResourceInClass(didactician.resources.resources[id]);

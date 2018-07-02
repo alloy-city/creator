@@ -3,7 +3,7 @@ export default () => {
     Auth.database("POST", doc, `eclass/modify/${Creator.Lesson.lesson.selected}`, res => {
         doc._id = Creator.Lesson.lesson.selected;
         Creator.Lesson.lesson.classObject = doc;
-        Creator.Lesson.addClassToDOM(doc)
+        // Creator.Lesson.addClassToDOM(doc)
         notify("Leçon modifiée", "success", false)
     })
 }

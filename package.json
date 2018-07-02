@@ -1,6 +1,6 @@
 {
   "name": "creator",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "A set of functionalities exclusive to Alloy City content creators.",
   "main": "index.js",
   "scripts": {
