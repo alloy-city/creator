@@ -1,3 +1,5 @@
+import { updateOrder } from './updateOrder'
+
 export default function (oneClass) {
     Creator.Lesson.clearEclassDisplay();
 
@@ -28,6 +30,12 @@ export default function (oneClass) {
             
             markup += '</div>'
             $('#lessons-resources-lessons-results').append(markup)
+
+            let list = document.getElementById(oneClass._id)
+            let sortable = new Sortable(list, {
+                onEnd: updateOrder
+            })
+
         })
     }
 }

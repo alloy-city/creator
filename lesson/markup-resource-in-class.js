@@ -8,14 +8,14 @@ export default (oneResource) => {
         }
     }
 
-    var markUpHeader = [
-        '<div class="resource" name="' + oneResource._id + '" onclick="Creator.Lesson.selectOneResourceInClass(\'' + oneResource._id + '\')" role="button">',
-        '<span class="pull-right glyphicon glyphicon-remove" aria-hidden="true" onclick="Creator.Lesson.deleteOneResourceFromEclass(\'' + oneResource._id + '\')" role="button"></span>',
-        '<span class="pull-right glyphicon glyphicon-triangle-bottom" aria-hidden="true" onclick="Creator.Lesson.moveResourceDownOnClass(\'' + oneResource._id + '\')" role="button"></span>',
-        '<span class="pull-right glyphicon glyphicon-triangle-top" aria-hidden="true" onclick="Creator.Lesson.moveResourceUpOnClass(\'' + oneResource._id + '\')" role="button"></span>'
-    ]
+    var markUpHeader = `
+        <div class="resource sortable" name="${oneResource._id}">
+        <span class="pull-right glyphicon glyphicon-remove" aria-hidden="true" onclick="Creator.Lesson.deleteOneResourceFromEclass('${oneResource._id}')" role="button"></span>
+        <span class="pull-right glyphicon glyphicon-triangle-bottom" aria-hidden="true" onclick="Creator.Lesson.moveResourceDownOnClass('${oneResource._id}')" role="button"></span>
+        <span class="pull-right glyphicon glyphicon-triangle-top" aria-hidden="true" onclick="Creator.Lesson.moveResourceUpOnClass('${oneResource._id}')" role="button"></span>
+        <span onclick="Creator.Lesson.selectOneResourceInClass('${oneResource._id}')" class="pull-right glyphicon glyphicon-pencil" aria-hidden="true" role="button"></span>`
 
-    var markUp = markUpHeader.join('');
+    var markUp = markUpHeader
     
     var items = ''
     if (oneResource.type == "html") {
