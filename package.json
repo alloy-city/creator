@@ -1,7 +1,11 @@
 {
   "name": "creator",
-  "version": "0.10.1",
+  "version": "1.0.0",
   "description": "A set of functionalities exclusive to Alloy City content creators.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alloy-city/creator.git"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,10 +13,10 @@
     "build:prod": "npx webpack --config webpack.prod.config.js"
   },
   "author": "Bernardo SOUSA",
-  "license": "GNU GPLv3",
+  "license": "GPL-3.0-only",
   "devDependencies": {
-    "ifdef-loader": "2.0.3",
-    "webpack": "4.16.3",
-    "webpack-cli": "3.1.0"
+    "ifdef-loader": "2.1.1",
+    "webpack": "4.35.3",
+    "webpack-cli": "3.3.5"
   }
 }
