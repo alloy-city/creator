@@ -7,6 +7,11 @@ export default function() {
     var jqObj = $('.create-active-resource-item');
     var items = [];
 
+    if (question.toLowerCase().indexOf("http://") > -1) {
+        notify("N'utilisez pas de resource servie par le protocole non-sécurisé HTTP.", "danger", true);
+        return;
+    }
+
     for (var i = 0; i < jqObj.length; i++) {
         items.push(jqObj.eq(i).val());
     }
