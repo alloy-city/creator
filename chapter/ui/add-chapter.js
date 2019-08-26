@@ -37,8 +37,10 @@ export default (chapter) => {
 
     for (let i = 0; i < chapter.lessons.length; i++){
         let tags = "&nbsp;&nbsp;&nbsp;"
-        for (let ii = 0; ii < chapter.lessons[i].tags.length; ii++) {
-            tags += `<span class="label label-default">${chapter.lessons[i].tags[ii]}</span>&nbsp;`
+        if (chapter.lessons[i].tags) {
+            for (let ii = 0; ii < chapter.lessons[i].tags.length; ii++) {
+                tags += `<span class="label label-default">${chapter.lessons[i].tags[ii]}</span>&nbsp;`
+            }
         }
 
         lessonsList += `
