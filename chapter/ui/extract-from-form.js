@@ -3,6 +3,7 @@ let descriptionElement = document.getElementById("creator-chapter-description")
 let priceElement = document.getElementById("creator-chapter-price")
 let levelElement = document.getElementById("creator-level-selector")
 let themeElement = document.getElementById("creator-theme-selector")
+let liveElement = document.getElementById("creator-chapter-live-boolean")
 let instructionsElement = document.getElementById("creator-chapter-instructions")
 let tagsElement = document.getElementById("creator-chapter-tags")
 
@@ -30,6 +31,7 @@ export default () => {
         Creator.Chapter.chapter.price = Number(priceElement.value)
         Creator.Chapter.chapter.level = Number(levelElement.options[levelElement.selectedIndex].value)
         Creator.Chapter.chapter.theme = Number(themeElement.options[themeElement.selectedIndex].value)
+        Creator.Chapter.chapter.live = liveElement.checked
         Creator.Chapter.chapter.instructions = instructionsElement.value
         Creator.Chapter.chapter.tags = separateTags(tagsElement.value)
         Creator.Chapter.chapter.language = "fr"

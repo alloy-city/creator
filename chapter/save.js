@@ -1,9 +1,9 @@
+import { post } from "../http";
+
 export default () => {
-
     let chapter = Creator.Chapter.chapter.getAll()
-    console.log(chapter)
 
-    Auth.database("POST", chapter, "chapter/", response => {
+    post(chapter, "chapter/", response => {
         console.log(response)
         notify("Chapitre dûment enregistré.", "success", false)
     })

@@ -20,13 +20,13 @@ function http(method, body, route, callback) {
     }
 
     fetch(`${apiDomain}/api/${route}`, init).then(response => {
-        console.log(response.status)
-
         if (response.status == 200) {
             response.json().then(callback)
         } else {
-            console.log(response)
-            callback(response.status)
+            response.json().then(res => {
+                if (res.reason === "TITLE_NOT_UNIQUE")
+                    notify("Ce titre est déjà utilisé.", "warning", true);
+            })
         }
     }).catch(reason => {
         console.log(reason)

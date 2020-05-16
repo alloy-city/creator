@@ -7,6 +7,7 @@ class Chapter {
         this.price
         this.level
         this.theme
+        this.live
         this.instructions
         this.tags = []
         this.lessons = []
@@ -22,6 +23,7 @@ class Chapter {
             price: this._price,
             level: this._level,
             theme: this._theme,
+            live: this._live,
             instructions: this._instructions,
             tags: this._tags,
             lessons: this._lessons
@@ -56,6 +58,10 @@ class Chapter {
         return this._theme
     }
 
+    get live(){
+        return this._live
+    }
+
     get instructions(){
         return this._instructions
     }
@@ -69,7 +75,7 @@ class Chapter {
     }
 
     // setters
-    setAll(_id, language, title, description, price, level, theme, instructions, tags, lessons){
+    setAll(_id, language, title, description, price, level, theme, live, instructions, tags, lessons){
         this.__id = _id
         this._language = language
         this._title = title
@@ -77,6 +83,7 @@ class Chapter {
         this._price = price
         this._level = level
         this._theme = theme
+        this._live = live
         this._instructions = instructions
         this._tags = tags
         this._lessons = lessons
@@ -108,6 +115,10 @@ class Chapter {
 
     set theme(theme) {
         this._theme = theme
+    }
+
+    set live(live) {
+        this._live = live
     }
 
     set instructions(instructions) {
