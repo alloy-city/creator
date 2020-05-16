@@ -4,8 +4,6 @@ let newChapterButton = document.getElementById("new-chapter-button")
 let createChapterForm = document.getElementById("creator-chapter-create")
 
 export default (chapter) => {
-    console.log(chapter)
-
     chapterContainer.innerHTML = ""
     chapterContainer.classList = ""
     createChapterForm.classList = "hidden"
@@ -83,6 +81,12 @@ export default (chapter) => {
                         <div class="well well-sm">
                             <p>${chapter.description}&nbsp;</p>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-2 verticleAlignOneLineNextToPanel"></div>
+                    <div class="col-xs-10">
+                        <p><i>${chapter.live ? "Conçu pour être utilisé aussi bien en autonomie qu'avec un professeur" : "Conçu pour être utilisé en autonomie"}</i></p>
                     </div>
                 </div>
                 <div class="row">

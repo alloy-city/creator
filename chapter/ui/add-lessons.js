@@ -12,5 +12,4 @@ export default (lessons) => {
         </tr>`
         chapterLessonsContainer.appendChild(htmlToElement(markup))
     }
-
 }

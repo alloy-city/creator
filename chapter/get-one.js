@@ -1,8 +1,15 @@
-export default (chapterId) => {
-    console.log(`Get chapter ${chapterId}.`)
+import { get } from "../http";
 
-    Auth.database("GET", null, `chapter/${chapterId}`, ch => {
+export default (chapterId) => {
+    /// #if DEBUG
+    // console.log(`Get chapter ${chapterId}.`)
+    /// #endif
+    
+    get(`chapter/${chapterId}`, ch => {
+        /// #if DEBUG
         console.log(ch)
+        /// #endif
+
         Creator.Chapter.chapter.setAll(
             ch._id,
             ch.author,
@@ -11,6 +18,7 @@ export default (chapterId) => {
             ch.price,
             ch.level,
             ch.theme,
+            ch.live,
             ch.instructions,
             ch.tags,
             ch.lessons

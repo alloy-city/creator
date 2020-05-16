@@ -6,6 +6,7 @@ let descriptionElement = document.getElementById("creator-chapter-description")
 let priceElement = document.getElementById("creator-chapter-price")
 let levelElement = document.getElementById("creator-level-selector")
 let themeElement = document.getElementById("creator-theme-selector")
+let liveElement = document.getElementById("creator-chapter-live-boolean")
 let instructionsElement = document.getElementById("creator-chapter-instructions")
 let tagsElement = document.getElementById("creator-chapter-tags")
 
@@ -19,6 +20,7 @@ export default () => {
     priceElement.value = chapter.price
     levelElement.value = chapter.level
     themeElement.value = chapter.theme
+    liveElement.checked = chapter.live
     instructionsElement = chapter.instructions
     
     let tags = ""
